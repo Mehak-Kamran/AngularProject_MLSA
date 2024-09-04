@@ -1,0 +1,26 @@
+
+  @for (item of rent; track $index){
+   
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title-group>
+          
+          
+          <img mat-card-md-image [src]="'https://covers.openlibrary.org/b/id/' + item.work.cover_id + '-L.jpg'" alt="Book Cover">
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <span><h4>Book name:</h4><h5>{{item.work.title}}</h5></span><br>
+        <span><h4>Author:</h4><h5>{{item.work.author_names}}</h5></span><br>
+        <button mat-button routerLink="/rentaldetails">Details</button>
+        
+      </mat-card-content>
+    </mat-card>
+   
+    
+
+  }
+
+
+    
+  
