@@ -12,7 +12,8 @@
       <mat-card-content>
         <span><h4>Book name:</h4><h5>{{item.work.title}}</h5></span><br>
         <span><h4>Author:</h4><h5>{{item.work.author_names}}</h5></span><br>
-        <button mat-button routerLink="/rentaldetails">Details</button>
+        <button mat-button [routerLink]="['/rentaldetails', item.work.key]">Details</button>
+
         
       </mat-card-content>
     </mat-card>
