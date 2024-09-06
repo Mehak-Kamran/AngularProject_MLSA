@@ -1,20 +1,42 @@
-
 <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content class="con">
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    
-  </mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+  </mat-card-header>
 
+  <!-- Display the image only if there is a cover -->
+  <img mat-card-md-image *ngIf="resultkey?.covers?.[0]" [src]="'https://covers.openlibrary.org/b/id/' + resultkey.covers[0] + '-L.jpg'" alt="Book Cover">
 
-  
+  <mat-card-content class="con">
+
+    <!-- Display Title only if it's not null -->
+    <span *ngIf="resultkey?.title">
+      <h4>Title:</h4>
+      <h5>{{resultkey.title}}</h5>
+    </span><br>
+
+    <!-- Display SubTitle only if it's not null -->
+    <span *ngIf="resultkey?.subtitle">
+      <h4>SubTitle:</h4>
+      <h5>{{resultkey.subtitle}}</h5>
+    </span><br>
+
+    <!-- Display Revisions only if it's not null -->
+    <span *ngIf="resultkey?.revision">
+      <h4>Revisions:</h4>
+      <h5>{{resultkey.revision}}</h5>
+    </span><br>
+
+    <!-- Display Description only if it's not null -->
+    <span *ngIf="resultkey?.description">
+      <h4>Description:</h4>
+      <h5>{{resultkey.description}}</h5>
+    </span><br>
+
+    <!-- Display Book Review link only if URL exists -->
+    <span *ngIf="resultkey?.links?.[0]?.url">
+      <h4>Book Review:</h4>
+      <h5><a href="{{resultkey.links[0].url}}" target="_blank">{{resultkey.links[0].url}}</a></h5>
+    </span><br>
+
+  </mat-card-content>
+</mat-card>
