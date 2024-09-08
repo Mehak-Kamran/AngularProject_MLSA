@@ -39,3 +39,40 @@
     opacity:0.5;
     z-index: -1;
  }
+
+ @media (max-width: 1200px) {
+    .banner {
+      height: 350px; /* reduce banner height for smaller screens */
+    }
+    .font1 {
+      font-size: 2.5rem; /* smaller font size for the title */
+    }
+    .font2 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+      height: 300px;
+    }
+    .font1 {
+      font-size: 2rem;
+    }
+    .font2 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner {
+      height: 500px;
+    }
+    .font1 {
+      font-size: 1.5rem;
+    }
+    .font2 {
+      font-size: 1rem;
+    }
+  }
+  
